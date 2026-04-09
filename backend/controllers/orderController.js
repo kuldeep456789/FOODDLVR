@@ -10,10 +10,11 @@ const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 const hasLiveStripeKey =
   Boolean(stripeSecretKey) && !stripeSecretKey.toLowerCase().includes("placeholder");
-const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
 const DELIVERY_FEE = 2;
 
 const getUserId = (req) => req.user?.id || req.body.userId;
+const getFrontendUrl = (req) =>
+  process.env.FRONTEND_URL || req.get("origin") || "http://localhost:5173";
 
 const resolveOrderItems = async (items = []) => {
   const resolvedItems = [];
@@ -68,6 +69,7 @@ const placeOrder = async (req, res) => {
   }
 
   let createdOrder = null;
+  const frontendUrl = getFrontendUrl(req);
 
   try {
     const orderItems = await resolveOrderItems(req.body.items);

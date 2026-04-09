@@ -9,9 +9,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/Login/Login";
 import "./index.css";
+import backendUrl from "../config/backendUrl";
 
 const AdminApp = () => {
-  const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  const url = backendUrl;
   return (
     <div className="admin-app">
       <ToastContainer />
