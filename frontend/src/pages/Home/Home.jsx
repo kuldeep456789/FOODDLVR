@@ -8,11 +8,19 @@ const Home = () => {
   const [category, setCategory] = useState("All");
   const [isFilterOpen, setIsFilterOpen] = useState(true);
   const allDishesPreview = menu_list[0]?.menu_image;
+  const scrollToFoodDisplay = () => {
+    window.requestAnimationFrame(() => {
+      document
+        .getElementById("food-display")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  };
 
   const handleCategoryClick = (nextCategory) => {
     setCategory((currentCategory) =>
       currentCategory === nextCategory ? "All" : nextCategory
     );
+    scrollToFoodDisplay();
   };
 
   return (
@@ -39,7 +47,10 @@ const Home = () => {
               className={`home-filter__item${
                 category === "All" ? " is-active" : ""
               }`}
-              onClick={() => setCategory("All")}
+              onClick={() => {
+                setCategory("All");
+                scrollToFoodDisplay();
+              }}
               aria-pressed={category === "All"}
             >
               <span className="home-filter__item-media" aria-hidden="true">
@@ -103,7 +114,10 @@ const Home = () => {
         </div>
 
         <Header />
-        <FoodDisplay category={category} />
+        <FoodDisplay
+          category={category}
+          onResetCategory={() => setCategory("All")}
+        />
       </div>
     </section>
   );

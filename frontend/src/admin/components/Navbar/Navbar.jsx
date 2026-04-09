@@ -1,5 +1,6 @@
 
 import "./Navbar.css";
+import { useContext } from "react";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import { toast } from "react-toastify";
