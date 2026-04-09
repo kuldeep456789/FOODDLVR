@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{
+  color-scheme: light;
+  --bg: #fffaf7;
+  --surface: #ffffff;
+  --surface-alt: #fff2ef;
+  --surface-elevated: #fffdfc;
+  --text: #1f2430;
+  --text-muted: #616b82;
+  --heading: #262626;
+  --primary: tomato;
+  --primary-soft: #ffe1e1;
+  --border: #e2e2e2;
+  --border-strong: tomato;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --overlay: rgba(0, 0, 0, 0.56);
+  --navbar-text: #49557e;
+  --navbar-active: #49557e;
+  --hero-button-bg: #ffffff;
+  --hero-button-text: #747474;
+  --hero-text: #ffffff;
+}
+
+[data-theme="dark"]{
+  color-scheme: dark;
+  --bg: #0f141d;
+  --surface: #181f2d;
+  --surface-alt: #20283a;
+  --surface-elevated: #242c3d;
+  --text: #eef2ff;
+  --text-muted: #b2bdd6;
+  --heading: #f6f7fb;
+  --primary: #ff7a5f;
+  --primary-soft: rgba(255, 122, 95, 0.14);
+  --border: #334056;
+  --border-strong: #ff7a5f;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --overlay: rgba(4, 8, 18, 0.72);
+  --navbar-text: #dbe3ff;
+  --navbar-active: #ffffff;
+  --hero-button-bg: #f6f7fb;
+  --hero-button-text: #202635;
+  --hero-text: #ffffff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+  scroll-behavior: smooth;
+}
+body{
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+#root{
+  min-height: 100vh;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.app{
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(12px, 1.2vw, 22px);
+  min-height: 100vh;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

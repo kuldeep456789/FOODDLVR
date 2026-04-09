@@ -1,0 +1,196 @@
+.header {
+    position: relative;
+    min-height: clamp(360px, 34vw, 620px);
+    margin: 30px auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f47b20 0%, #f68c18 45%, #f5a028 100%);
+    box-shadow: 0 26px 70px var(--shadow);
+}
+
+.header-slider {
+    position: absolute;
+    inset: 0;
+}
+
+.header-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 0.7s ease, transform 0.9s ease;
+}
+
+.header-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.header-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.header-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(9, 12, 18, 0.72) 0%, rgba(9, 12, 18, 0.36) 42%, rgba(9, 12, 18, 0.08) 72%, rgba(9, 12, 18, 0.18) 100%),
+        radial-gradient(circle at right center, rgba(255, 255, 255, 0.08), transparent 36%);
+}
+
+.header-contents {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25vw;
+    max-width: 52%;
+    bottom: 12%;
+    left: 6vw;
+    animation: fadeIn 1.2s ease;
+}
+
+.header-eyebrow {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+}
+
+.header-contents h2 {
+    font-weight: 700;
+    color: var(--hero-text);
+    font-size: clamp(2.4rem, 4.8vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+}
+
+.header-contents p {
+    max-width: 42rem;
+    color: var(--hero-text);
+    font-size: clamp(0.95rem, 1vw, 1.08rem);
+    line-height: 1.55;
+}
+
+.header-contents button {
+    border: none;
+    color: var(--hero-button-text);
+    font-weight: 600;
+    padding: 1vw 2.35vw;
+    background-color: var(--hero-button-bg);
+    font-size: max(1vw, 13px);
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-contents button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+}
+
+.header-slider-controls {
+    position: absolute;
+    z-index: 2;
+    right: 6vw;
+    bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.header-arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 1.6rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(14px);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.header-arrow:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.header-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(9, 12, 18, 0.24);
+    backdrop-filter: blur(14px);
+}
+
+.header-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: width 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header-dot.is-active {
+    width: 1.8rem;
+    background: #ffffff;
+}
+
+.header-dot:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 58%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        min-height: 420px;
+        border-radius: 1.5rem;
+    }
+
+    .header-contents {
+        max-width: 74%;
+        gap: 0.9rem;
+        bottom: 9%;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 0.9rem 1.35rem;
+    }
+
+    .header-slider-controls {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 1rem;
+    }
+
+    .header-arrow {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}

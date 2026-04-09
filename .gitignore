@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs
+*.log
+*.out
+*.err
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel local state
+.vercel/

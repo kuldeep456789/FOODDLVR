@@ -1,0 +1,210 @@
+.food-display--salad {
+  margin-top: 32px;
+}
+
+.salad-showcase {
+  width: 100%;
+}
+
+.salad-showcase__panel {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(83, 105, 255, 0.16), transparent 30%),
+    radial-gradient(circle at top left, rgba(255, 122, 95, 0.12), transparent 26%),
+    linear-gradient(180deg, #0e1525 0%, #0a101b 100%);
+  box-shadow: 0 24px 60px rgba(4, 8, 18, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.salad-showcase__header {
+  margin-bottom: 1.5rem;
+}
+
+.salad-showcase__eyebrow {
+  margin-bottom: 0.4rem;
+  color: rgba(200, 210, 255, 0.8);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.salad-showcase h2 {
+  color: #f7f9ff;
+  font-size: clamp(1.7rem, 2.6vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.salad-showcase__text {
+  max-width: 52rem;
+  margin-top: 0.85rem;
+  color: rgba(224, 230, 255, 0.75);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.salad-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.salad-card {
+  overflow: hidden;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, #111a2d 0%, #0e1523 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 45px rgba(4, 8, 18, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.salad-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(4, 8, 18, 0.35);
+}
+
+.salad-card__media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.salad-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.salad-card:hover .salad-card__image {
+  transform: scale(1.05);
+}
+
+.salad-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(8, 12, 20, 0.3) 100%);
+}
+
+.salad-card__price {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffcdbf;
+  font-size: 0.9rem;
+  font-weight: 700;
+  backdrop-filter: blur(14px);
+}
+
+.salad-card__body {
+  padding: 1.2rem 1.15rem 1.3rem;
+}
+
+.salad-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.salad-card__title-row h3 {
+  color: #f8f9ff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.salad-card__badge {
+  flex: 0 0 auto;
+  padding-top: 0.08rem;
+  color: #ffb39f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.salad-card__description {
+  margin-top: 0.5rem;
+  color: rgba(224, 230, 255, 0.74);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.salad-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.salad-card__bag-button {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  background: #1f2940;
+  color: #cfd8ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.82rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.salad-card__bag-button:hover {
+  background: #27324c;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.salad-card__heart {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1c2540;
+  color: #dbe4ff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.salad-card__heart svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+@media (max-width: 1100px) {
+  .salad-showcase__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .salad-showcase__panel {
+    border-radius: 1.5rem;
+    padding: 1rem;
+  }
+
+  .salad-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .salad-card__media {
+    height: 200px;
+  }
+}

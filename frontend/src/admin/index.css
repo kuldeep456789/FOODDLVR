@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+.admin-app * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Outfit, sans-serif;
+}
+.admin-app {
+    min-height: 100vh;
+    background-color: #fcfcfc;
+}
+.admin-app a {
+    text-decoration: none;
+    color: inherit;
+}
+.admin-app hr {
+    border: none;
+    height: 1px;
+    background-color: #a9a9a9;
+}
+.admin-app .app-content {
+    display: flex;
+}
+.admin-app .flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.admin-app .cursor {
+    cursor: pointer;
+}
